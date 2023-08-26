@@ -18,13 +18,13 @@ class CarManager:
             new_car.goto(random.randint(320, 920), random.randint(-240, 240))
             self.cars.append(new_car)
 
-    def move_forward(self):
+    def move_forward(self, car_move_speed):
         for car in self.cars:
             if car.xcor() < -320:
                 y_random = random.randint(-240, 240)
                 x_random = random.randint(320, 920)
                 car.goto(x_random, y_random)
-            car.forward(20)
+            car.forward(car_move_speed)
 
     def add_level(self, num):
         self.create_car(num)

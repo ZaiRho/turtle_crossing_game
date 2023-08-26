@@ -4,6 +4,8 @@ from car_manager import CarManager
 from level_manager import LevelManager
 import time
 
+CAR_MOVE_SPEED = 10
+
 game_over = False
 
 screen = Screen()
@@ -35,7 +37,7 @@ def check_collision():
 
 while not game_over:
     screen.update()
-    car_manager.move_forward()
+    car_manager.move_forward(CAR_MOVE_SPEED)
     if player.ycor() > 240:
         add_level()
         print("Level Completed")
